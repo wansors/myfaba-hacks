@@ -8,6 +8,10 @@ Create a folder with your own songs in faba format
 ```
 ./createFigure.sh <figure_ID (3 digits)> <source_folder>
 ```
+For example for figure with ID 742
+```
+./createFigure.sh 742 /home/user/mysongs
+```
 
 Then copy it to your faba box.
 
@@ -20,7 +24,7 @@ javac MKIDecipher.java
 java MKIDecipher ../../K0403_CP01
 ```
 
-### Decipher file
+### Cipher file
 ```
 javac MKICipher.java
 java MKICipher ../../K0403_CP01.decipher
