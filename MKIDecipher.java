@@ -1,3 +1,5 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -42,20 +44,21 @@ public class MKIDecipher {
         String outputFileName = inputFileName + ".mp3";
         File outputFile = new File(outputFileName);
 
-        try (FileInputStream fis = new FileInputStream(inputFile);
-             FileOutputStream fos = new FileOutputStream(outputFile)) {
+        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(inputFile));
+             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(outputFile))) {
 
             int byteRead;
             int pos=0;
-            while ((byteRead = fis.read()) != -1) {
+            while ((byteRead = bis.read()) != -1) {
                 int modifiedByte=findDecipheredData(pos,byteRead);
                 
                 // Write the modified byte to the output file.
                 //System.out.println("pos: "+pos+"\tcipher: "+Integer.toHexString(byteRead)+"\torig: "+Integer.toHexString(modifiedByte));
-                fos.write(modifiedByte);
+                bos.write(modifiedByte);
                 pos++;
             }
 
+            bos.flush();
             System.out.println("File processed successfully. Output file: " + outputFileName);
 
         } catch (IOException e) {
