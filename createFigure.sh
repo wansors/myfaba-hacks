@@ -33,8 +33,8 @@ if [ ! -d "$SOURCE_FOLDER" ]; then
     exit 1
 fi
 
-# Create the output directory named K0<FIGURE_ID>
-OUTPUT_DIR="K0${FIGURE_ID}"
+# Define the output directory within the source folder
+OUTPUT_DIR="${SOURCE_FOLDER}/K0${FIGURE_ID}"
 mkdir -p "$OUTPUT_DIR"
 
 # Initialize iterator
@@ -42,6 +42,12 @@ iterator=1
 
 # Loop through each mp3 file
 for file in "$SOURCE_FOLDER"/*.mp3; do
+    # Skip iteration if no mp3 files are found
+    if [ ! -e "$file" ]; then
+        echo "No MP3 files found in the source folder."
+        exit 1
+    fi
+
     # Format iterator as two digits with leading zero if necessary
     ITERATOR=$(printf "%02d" "$iterator")
 
@@ -57,11 +63,11 @@ for file in "$SOURCE_FOLDER"/*.mp3; do
 
     # Copy the modified mp3 to the output directory
     cp "$file" "$OUTPUT_DIR/CP${ITERATOR}"
-    #Change title
+    # Change title
     id3v2 -t "$NEW_TITLE" "$OUTPUT_DIR/CP${ITERATOR}"
     # Cipher the file
     java MKICipher "$OUTPUT_DIR/CP${ITERATOR}"
-    #remove source file
+    # Remove source file
     rm "$OUTPUT_DIR/CP${ITERATOR}"
 
     # Increment the iterator
