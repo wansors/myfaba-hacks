@@ -93,6 +93,7 @@
 | 116   | Italian        | PAW Patrol la squadra dei cuccioli: Skye             | FFR15302  |
 | 117   | Italian        | PAW Patrol la squadra dei cuccioli: Marshall         | FFR15303  |
 | 150   | Italian        | Le canzoni di Ele l'elefante                         | FFR30015  |
+| 190   | Neutral        | FABA·ME white                                        |           |
 | 198   | Neutral        | FABA·ME red                                          | FFR50002  |
 | 400   | Spanish        | Elefante                                             |           |
 | 401   | Spanish        | Dulces sinfonias de Mozart                           | FFL30003  |
