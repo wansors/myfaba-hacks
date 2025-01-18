@@ -38,6 +38,21 @@ A: To decrypt the files:
 ### Q: Is it possible to create custom characters for the Faba Box?
 A: Yes, it's possible to create custom characters for the Faba Box by programming custom NFC tags. This requires knowledge of the Faba Box's tag recognition system.
 
+### Q: How do I replace one or several Faba tracks with my own?
+A: Follow the steps below:
+- Find the relevant folder (check the <a href="https://github.com/wansors/myfaba-hacks/blob/main/TAGS.md">Figure ID Registry</a>) and save a backup copy to your computer.
+- Copy a track to your computer and <a href="https://github.com/wansors/myfaba-hacks/blob/main/README.md#decipher-file">decipher it</a> (should be faster than working in the Faba box).
+- Check the .mp3 file with id3v2 (or a similar program) to verify file name, should be "K0XXXCPYY" where "XXX" is the figure ID and YY is the track number:
+    Linux terminal: $ id3v2 --list [FILE]
+- Delete the file and copy the replacement file to your folder.
+- Change the replacement file name to the old file's name (usually CP01.mp3 etc.).
+- Use id3v2 to clear all other ID3 tags and change the ID3 tag for the track's name to the one of the original file:
+    Linux terminal: $ id3v2 -a "" -A "" -c "" -g "" -y "" -T "" --song "K0XXXCPYY" [FILE]
+- <a href="https://github.com/wansors/myfaba-hacks/blob/main/README.md#cipher-file">Cipher the track</a> and, if need be, change the file name so it follows the original pattern (e.g. removing the ".mp3" from the file name).
+- Copy the track to the relevant folder in the Faba box and unmount the box from your computer. It should now work fine!
+
+Note that some of the above steps are superfluous. If you like living dangerously, you can simply change your replacement songs' names to "CP01.mp3", "CP02.mp3" etc, clear all their ID3 tags and change the ID3 titles following the "K0XXXCPYY" pattern, cipher the tracks and then push them to the box. You can add more tracks than the original folder contained, only limited by available space in the box and presumably no more than 99 tracks can be added.
+
 ## Troubleshooting
 
 ### Q: What should I do if my custom tags aren't working?
