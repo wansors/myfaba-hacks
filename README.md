@@ -1,9 +1,9 @@
 # myfaba-hacks
-A collection of tools and scripts for customizing and enhancing your MyFaba storytelling box. Unlock new features, personalize your experience, and dive deeper into the world of interactive storytelling with this set of user-friendly hacks and mods.
+A collection of tools and scripts for customizing and enhancing your MyFaba and Faba+ storytelling box. Unlock new features, personalize your experience, and dive deeper into the world of interactive storytelling with this set of user-friendly hacks and mods.
 
 
 
-## Create your own figure
+## Create your own figure (Original Faba)
 Create a folder with your own songs in faba format
 ```
 ./createFigure.sh <figure_ID (3 digits)> <source_folder>
@@ -16,6 +16,18 @@ For example for figure with ID 742
 Then copy it to your faba box.
 
 Write an NFC TAG with the figure ID and enjoy it!
+
+## Create your own figure (Faba+)
+Create a folder with your own songs in faba format
+```
+./createFigureFabaPlus.sh <figure_ID (3 digits)> <source_folder>
+```
+For example for figure with ID 742
+```
+./createFigureFabaPlus.sh 742 /home/user/mysongs
+```
+
+Then copy it to your faba box (See FAQ).
 
 ## Cipher and decipher files
 ### Decipher file
