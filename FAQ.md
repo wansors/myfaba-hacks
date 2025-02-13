@@ -11,6 +11,25 @@ A: Yes, it's possible to 3D print disks similar to the original Faba ones. These
 ### Q: What size should the custom disks be?
 A: Custom disks should be 5cm in diameter to fit with the Faba Box (Mine are make of wood).
 
+### Q: Is Faba+ supported?
+A: Yes, however Faba+ uses a different method to cipher files.
+Use the following script to convert the files (Basically .mp3 with a different extensions and a control file):
+
+```
+./createFigureFabaPlus.sh <figure_ID (3 digits)> <source_folder>
+```
+### Q: How can I add the files to Faba+?
+A: In order to add your custom mp3 to Faba+, you can not use the USB (The port is for charging only). You have to:
+
+1. Open the Faba+ (screws under the red bottom pins)
+2. Remove the MicroSD
+3. Read it using a PC/Mac
+4. Place the files there.
+
+
+### Q: Can I rewrite/reprogram Tags on Faba+?
+A: No, it seems that FABA+ stores the Serial ID and associate it to the first figure ID you write. [Issue #11](https://github.com/wansors/myfaba-hacks/issues/11)
+
 ## Faba Box and App
 
 ### Q: What happens if I connect my Faba Box to the official app?
