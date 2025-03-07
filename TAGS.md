@@ -200,14 +200,6 @@
 | 272 | French          | Noël                                                                 |          |
 | 274 | French          | Chantez en anglais avec Daisy Dot                                    |          |
 | 300 | French          | Le festival des chansons [fr]                                        |          |
-| 400 | Spanish         | Elefante                                                             |          |
-| 401 | Spanish         | Dulces sinfonias de Mozart                                           |          |
-| 402 | Spanish         | Los abrazos de las buenas noches                                     |          |
-| 403 | Spanish         | El unicornio feliz                                                   |          |
-| 404 | Spanish         | Canciones de navidad                                                 |          |
-| 405 | Spanish         | El Gato con Botas y otro cuento                                      |          |
-| 406 | Spanish         | La Cenicienta y otro cuento                                          |          |
-| 421 | Catalan         | Cançons populars per a infants en lengua catalana                    |          |
 | 400 | Spanish         | Ele el elefante                                                      |          |
 | 401 | Spanish         | Dulces sinfonías de Mozart                                           | FFL30003 |
 | 402 | Spanish         | Los abrazos de las buenas noches                                     | FFL30002 |
