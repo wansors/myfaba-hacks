@@ -75,6 +75,7 @@
 | 093 | Italian         | Divertiamoci con le tabelline!                                       | FFR30007 |
 | 094 | Italian         | Buon compleanno!                                                     | FFR30003 |
 | 095 | Italian         | Il libro della giungla e un'altra storia                             | FFR10007 |
+| 096 | Italian         | Lo schiaccianoci                                                     | FFR10010 |
 | 097 | Italian         | Le storie di Ladybug e Chat Noir                                     | FFR15201 |
 | 098 | Italian         | Oggi cucino io!                                                      | CVI10001 |
 | 099 | Italian         | Le avventure di Ladybug e Chat Noir: Dark Cupido                     | BKI15201 |
@@ -104,6 +105,7 @@
 | 125 | Italian         | Tutti a nanna con Oscar!                                             |          |
 | 126 | Italian         | Piccole storie di Pimpa                                              |          |
 | 127 | Italian         | Arriva Lucilla!                                                      |          |
+| 128 | Italian         | Buonanotte Bing                                                      | FFR15702 |
 | 129 | Italian         | Facciamo il bagnetto                                                 |          |
 | 130 | Italian         | Laviamo i dentini                                                    |          |
 | 131 | Italian         | Felicity the fish                                                    |          |
