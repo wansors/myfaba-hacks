@@ -3,7 +3,11 @@
 ## General Questions
 
 ### Q: What are the correct NFC tags to use?
-A: The recommended NFC tags are NTAG213 compatible. You can find suitable tags on platforms like Temu. Here's an example link: [Temu NFC Tags](https://www.temu.com/goods.html?_bg_fs=1&goods_id=601099537125301&sku_id=17592302840204)
+A: The recommended NFC tags are NTAG213 compatible. You can find suitable tags on platforms like Temu, Amazon, etc. Here are some example links:
+- [Temu NFC Tags](https://www.temu.com/goods.html?_bg_fs=1&goods_id=601099537125301&sku_id=17592302840204)
+- [Amazon IT](https://www.amazon.it/dp/B07Q7FZDSC)
+- [Amazon ES](https://www.amazon.es/dp/B07Q7FZDSC)
+- [Amazon DE](https://www.amazon.de/gp/product/B07Q43PXMR/)
 
 ### Q: Can I 3D print my own Faba-compatible disks?
 A: Yes, it's possible to 3D print disks similar to the original Faba ones. These custom-printed disks can work with the Faba Box.
