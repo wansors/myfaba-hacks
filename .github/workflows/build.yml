@@ -1,0 +1,58 @@
+name: Build a release
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    name: Build packages
+    permissions:
+      contents: write
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            TARGET: windows
+            CMD_BUILD: pyinstaller python\build-win.spec
+            CMD_ZIP: Compress-Archive RedEle.exe RedEle_Windows_${{ github.ref_name }}.zip
+            OUT_FILE_NAME: RedEle_Windows_${{ github.ref_name }}.zip
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.13
+
+    - name: Install dependencies
+      run: |
+        cd python
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt 
+        pip install pyinstaller       
+
+    - name: Build with pyinstaller for ${{matrix.TARGET}}
+      run: ${{matrix.CMD_BUILD}}
+      
+    - name: Compress application
+      run: |
+        cd dist
+        ${{matrix.CMD_ZIP}}
+      
+    - name: Upload the built package
+      uses: actions/upload-artifact@v4
+      with:
+        path: dist/${{ matrix.OUT_FILE_NAME}}
+        name: ${{ matrix.OUT_FILE_NAME}}
+
+    - name: Associate the built package to the release, if any
+      if: ${{ github.event_name == 'release' }}
+      uses: softprops/action-gh-release@v2
+      with:
+        files: dist/${{ matrix.OUT_FILE_NAME}}
+ 
