@@ -316,6 +316,7 @@ if __name__ == "__main__":
                      default_size=(1100, 820),
                      progress_regex=r"^=+\[(\d+)/(\d+)]$",
                      progress_expr="x[0] / x[1] * 100",
+                     encoding='UTF-8'
                     )(main)
     # Gooey reruns the script with this parameter for the actual execution.
     # Since we don't use decorator to enable commandline use, remove this parameter
