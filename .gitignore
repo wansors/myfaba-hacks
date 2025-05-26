@@ -2,3 +2,4 @@
 /K0*/
 .idea
 *.class
+__pycache__/

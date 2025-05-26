@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
+import codecs
+import mutagen
 import os
 import sys
 import re
 import shutil
+import utils
+
 from gooey import GooeyParser
 from mutagen.id3 import ID3, TIT2
 from mutagen.mp3 import MP3
+
 
 
 # Cipher transformation tables
@@ -31,13 +37,14 @@ byte_low_nibble_odd = [[0x8, 0x9, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF],
                        [0x1, 0x0, 0x3, 0x2, 0x5, 0x4, 0x7, 0x6],
                        [0x8, 0x9, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF]]
 
+
 def clear_and_set_title(mp3_file, new_title):
     """ Remove all MP3 tags and set a single title tag """
     try:
-        audio = MP3(mp3_file, ID3=ID3)
-        audio.delete()
-        audio["TIT2"] = TIT2(encoding=3, text=new_title)
-        audio.save()
+        tags = MP3(mp3_file, ID3=ID3)
+        tags.delete()
+        tags["TIT2"] = TIT2(encoding=3, text=new_title)
+        tags.save()
     except Exception as e:
         print(f"Error processing {mp3_file}: {e}")
         sys.exit(1)
@@ -147,12 +154,22 @@ def main():
     )
 
     args = parser.parse_args()
+    
+    if sys.stdout.encoding != 'UTF-8':
+        sys.stdout = utils.Unbuffered(codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict'))
+    if sys.stderr.encoding != 'UTF-8':
+        sys.stderr = utils.Unbuffered(codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict'))    
 
     if not os.path.isdir(args.source_folder):
         print(f"Error: Source folder '{args.source_folder}' does not exist or is not a directory.")
         sys.exit(1)
 
     if args.encrypt:
+        
+        # monkeypatch out exceptions on invalid ID3 headers - we're only trying to delete
+        # every ID3 tag after all...
+        mutagen.id3._tags.ID3Header.__init__ = utils.id3header_constructor_monkeypatch
+        
         if not re.match(r"^\d{3}$", args.figure_id):
             print("Error: Figure ID must be exactly 3 digits.")
             sys.exit(1)
@@ -216,6 +233,7 @@ if __name__ == "__main__":
                      default_size=(1100, 820),
                      progress_regex=r"^=+\[(\d+)/(\d+)]$",
                      progress_expr="x[0] / x[1] * 100",
+                     encoding='UTF-8'
                     )(main)
     # Gooey reruns the script with this parameter for the actual execution.
     # Since we don't use decorator to enable commandline use, remove this parameter
