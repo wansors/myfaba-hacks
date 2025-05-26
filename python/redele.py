@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import codecs
 import os
 import sys
 import re
@@ -242,6 +243,11 @@ def main():
     )
 
     args = parser.parse_args()
+    
+    if sys.stdout.encoding != 'UTF-8':
+        sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+    if sys.stderr.encoding != 'UTF-8':
+        sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')    
 
     if not os.path.isdir(args.source_folder):
         print(f"Error: Source folder '{args.source_folder}' does not exist or is not a directory.")
