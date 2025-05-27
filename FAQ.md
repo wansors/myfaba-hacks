@@ -3,7 +3,7 @@
 ## General Questions
 
 ### Q: What are the correct NFC tags to use?
-A: Please check [compatible NTAG21x tags](./FAQ_TAGS.ms)
+A: Please check [compatible NTAG21x tags](./FAQ_TAGS.md)
 
 ### Q: Can I 3D print my own Faba-compatible disks?
 A: Yes, it's possible to 3D print disks similar to the original Faba ones. These custom-printed disks can work with the Faba Box.
