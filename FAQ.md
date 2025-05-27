@@ -3,11 +3,7 @@
 ## General Questions
 
 ### Q: What are the correct NFC tags to use?
-A: The recommended NFC tags are NTAG213 compatible. You can find suitable tags on platforms like Temu, Amazon, etc. Here are some example links:
-- [Temu NFC Tags](https://www.temu.com/goods.html?_bg_fs=1&goods_id=601099537125301&sku_id=17592302840204)
-- [Amazon IT](https://www.amazon.it/dp/B07Q7FZDSC)
-- [Amazon ES](https://www.amazon.es/dp/B07Q7FZDSC)
-- [Amazon DE](https://www.amazon.de/gp/product/B07Q43PXMR/)
+A: Please check [compatible NTAG21x tags](./FAQ_TAGS.ms)
 
 ### Q: Can I 3D print my own Faba-compatible disks?
 A: Yes, it's possible to 3D print disks similar to the original Faba ones. These custom-printed disks can work with the Faba Box.
@@ -48,10 +44,10 @@ A: Yes, you can add your own audio files to the Faba Box. However, you'll need t
 ## Hacking and Customization
 
 ### Q: How do I write a custom code to an NFC tag?
-A: You'll need to use an NFC writing tool to copy the code of a character onto a blank NTAG213 tag. Specific instructions may vary depending on the tool you're using.
+A: You'll need to use an NFC writing tool to copy the code of a character onto a blank NTAG213 tag. Specific instructions may vary depending on the tool you're using - in general, you need to write NDEF text record with value `021905300XXX00`, where `XXX` stands for figure ID (001 to 999). This text needs to end up between sector 7, byte 3 and sector 10 (0x0A) byte 4 on the tag. For example, app _NFC_Tools_ on both iOS and Android writes the chip correctly by just creating single new "text" field with correct value and writing it.
 
 ### Q: What should I do if the Faba Box doesn't recognize my custom tag?
-A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that you're using a compatible NFC tag type.
+A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that [you're using a compatible NFC tag type](./FAQ_TAGS.md). If the light flashes rapidly, box has no content for the tag with this figure ID.
 
 ### Q: How can I decrypt the files from the Faba Box?
 A: To decrypt the files:
