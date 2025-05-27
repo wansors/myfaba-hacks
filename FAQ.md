@@ -9,7 +9,7 @@ A: Please check [compatible NTAG21x tags](./FAQ_TAGS.md)
 A: Yes, it's possible to 3D print disks similar to the original Faba ones. These custom-printed disks can work with the Faba Box.
 
 ### Q: What size should the custom disks be?
-A: Custom disks should be 5cm in diameter to fit with the Faba Box (Mine are make of wood).
+A: Custom disks should be 5cm in diameter to fit with the Faba Box (Mine are make of wood). A good option is also a [45mm coin capsule](https://www.aliexpress.com/item/1005007424083743.html), it has outer diameter of ~49mm and fits on top of the box.
 
 ### Q: Is Faba+ supported?
 A: Yes, however Faba+ uses a different method to cipher files.
@@ -36,7 +36,7 @@ A: No, it seems that FABA+ stores the Serial ID and associate it to the first fi
 A: Connecting your Faba Box to the official app may result in an update that erases all folders currently stored in the Box's memory. It's recommended to avoid updating if you want to keep your existing content.
 
 ### Q: How much storage does the Faba Box have?
-A: The Faba Box initially comes with about 4.5GB of storage data. After connecting to the app, this may be reduced to around 100MB for a small number of official tags.
+A: Both Faba Box and Faba+ come with 8GB Micro-SD card. On the Faba Box it initially contains about 4.5GB of data. After connecting to the app, this is reduced to around 100MB per figure you own and the audio for figures that you don't own is deleted from the box.
 
 ### Q: Can I add my own audio files to the Faba Box?
 A: Yes, you can add your own audio files to the Faba Box. However, you'll need to follow specific procedures to ensure they're recognized by the system.

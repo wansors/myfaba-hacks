@@ -18,7 +18,7 @@ Most of these behave as if the previously read chip was put on the FABA box rega
 
 Generally, it seems that any NTAG213 clone produced by company [5YOA](http://www.5yoa.com) fails. That seems to cover at least 90% of all NTAG213 chips on Aliexpress/TEMU, so choose wisely.
 
-- [Aliexpress 5YOA](https://www.aliexpress.com/item/32814647380.html)
+- [Aliexpress 5YOA confirmed non-working](https://www.aliexpress.com/item/32814647380.html)
 
 ## NTAG215
 
@@ -37,7 +37,7 @@ the chip in order to work. There are two possible workarounds for this:
 
 Known working app for the second approach is [MiFARE Ultralight Tool](https://play.google.com/store/apps/details?id=com.mtoolstec.mifareultralighttool&hl=en). During writing, it'll report that the first 4 pages cannot be written - that is expected and does not affect the copy.
 
-### Known working NTAG213 chips
+### Known working NTAG215 chips
 
 - [Aliexpress hard plastic disks](https://a.aliexpress.com/_EIFPVGa)
 - [Aliexpress stickers](https://a.aliexpress.com/_EuRbf98) - be careful, their working range is only about 1mm from the top of the reading pad. The hard plastic version is preferable, it has range of about 5mm.
