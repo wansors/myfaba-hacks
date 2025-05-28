@@ -81,7 +81,7 @@ A: If your custom tags aren't working:
 3. Ensure you're placing the tag correctly on the Faba Box.
 4. Try using the tag with the official Faba app to see if it's recognized.
 
-If problems persist, you may need to try [a different brand or type of NFC tag]((./FAQ_TAGS.md)).
+If problems persist, you may need to try [a different brand or type of NFC tag](./FAQ_TAGS.md).
 
 ### Q: How can I reset my Faba Box to factory settings?
 A: The process for resetting a Faba Box to factory settings may vary. Generally, it involves a specific button sequence or connecting to the official app. Consult the user manual or contact Faba support for precise instructions.
