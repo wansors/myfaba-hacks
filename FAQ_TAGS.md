@@ -21,8 +21,8 @@ Generally, it seems that any NTAG213 clone with serial starting 0x1D or 0xFF fai
 - [Aliexpress 0x1D confirmed non-working - round paper - company 5YOA](https://www.aliexpress.com/item/32814647380.html)
 - [Aliexpress 0x1D confirmed non-working - small wet inlay rectangle](https://www.aliexpress.com/item/1005006335474882.html)
 - [Aliexpress 0x1D confirmed non-working - 40x25mm big paper rectangle](https://www.aliexpress.com/item/1005008319546642.html)
-- [Aliexpress 0xFF confirmed non-working - round wet inlay - antenna path visually different from the one above, but also failing](https://www.aliexpress.com/item/1005008604718409.html)
-- [Aliexpress 0xFF confirmed non-working - small wet inlay rectangle - again different from above, but failing in the same way](https://www.aliexpress.com/item/1005008604718409.html)
+- [Aliexpress 0xFF confirmed non-working - round wet inlay - ILMH - antenna path visually different from the one above, but also failing](https://www.aliexpress.com/item/1005008604718409.html)
+- [Aliexpress 0xFF confirmed non-working - small wet inlay rectangle - ILMH - again different from above, but failing in the same way](https://www.aliexpress.com/item/1005008604718409.html)
 
 ## NTAG215
 
