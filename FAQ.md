@@ -3,17 +3,13 @@
 ## General Questions
 
 ### Q: What are the correct NFC tags to use?
-A: The recommended NFC tags are NTAG213 compatible. You can find suitable tags on platforms like Temu, Amazon, etc. Here are some example links:
-- [Temu NFC Tags](https://www.temu.com/goods.html?_bg_fs=1&goods_id=601099537125301&sku_id=17592302840204)
-- [Amazon IT](https://www.amazon.it/dp/B07Q7FZDSC)
-- [Amazon ES](https://www.amazon.es/dp/B07Q7FZDSC)
-- [Amazon DE](https://www.amazon.de/gp/product/B07Q43PXMR/)
+A: Please check [compatible NTAG21x tags](./FAQ_TAGS.md)
 
 ### Q: Can I 3D print my own Faba-compatible disks?
 A: Yes, it's possible to 3D print disks similar to the original Faba ones. These custom-printed disks can work with the Faba Box.
 
 ### Q: What size should the custom disks be?
-A: Custom disks should be 5cm in diameter to fit with the Faba Box (Mine are make of wood).
+A: Custom disks should be 5cm in diameter to fit with the Faba Box (Mine are make of wood). A good option is also a [45mm coin capsule](https://www.aliexpress.com/item/1005007424083743.html), it has outer diameter of ~49mm and fits on top of the box.
 
 ### Q: Is Faba+ supported?
 A: Yes, however Faba+ uses a different method to cipher files.
@@ -40,7 +36,7 @@ A: No, it seems that FABA+ stores the Serial ID and associate it to the first fi
 A: Connecting your Faba Box to the official app may result in an update that erases all folders currently stored in the Box's memory. It's recommended to avoid updating if you want to keep your existing content.
 
 ### Q: How much storage does the Faba Box have?
-A: The Faba Box initially comes with about 4.5GB of storage data. After connecting to the app, this may be reduced to around 100MB for a small number of official tags.
+A: Both Faba Box and Faba+ come with 8GB Micro-SD card. On the Faba Box it initially contains about 4.5GB of data. After connecting to the app, this is reduced to around 100MB per figure you own and the audio for figures that you don't own is deleted from the box.
 
 ### Q: Can I add my own audio files to the Faba Box?
 A: Yes, you can add your own audio files to the Faba Box. However, you'll need to follow specific procedures to ensure they're recognized by the system.
@@ -48,10 +44,10 @@ A: Yes, you can add your own audio files to the Faba Box. However, you'll need t
 ## Hacking and Customization
 
 ### Q: How do I write a custom code to an NFC tag?
-A: You'll need to use an NFC writing tool to copy the code of a character onto a blank NTAG213 tag. Specific instructions may vary depending on the tool you're using.
+A: You'll need to use an NFC writing tool to copy the code of a character onto a blank NTAG213 tag. Specific instructions may vary depending on the tool you're using - in general, you need to write NDEF text record with value `021905300XXX00`, where `XXX` stands for figure ID (001 to 999). This text needs to end up between sector 7, byte 3 and sector 10 (0x0A) byte 4 on the tag. For example, app _NFC_Tools_ on both iOS and Android writes the chip correctly by just creating single new "text" field with correct value and writing it.
 
 ### Q: What should I do if the Faba Box doesn't recognize my custom tag?
-A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that you're using a compatible NFC tag type.
+A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that [you're using a compatible NFC tag type](./FAQ_TAGS.md). If the light flashes rapidly, box has no content for the tag with this figure ID.
 
 ### Q: How can I decrypt the files from the Faba Box?
 A: To decrypt the files:
@@ -85,7 +81,7 @@ A: If your custom tags aren't working:
 3. Ensure you're placing the tag correctly on the Faba Box.
 4. Try using the tag with the official Faba app to see if it's recognized.
 
-If problems persist, you may need to try a different brand or type of NFC tag.
+If problems persist, you may need to try [a different brand or type of NFC tag](./FAQ_TAGS.md).
 
 ### Q: How can I reset my Faba Box to factory settings?
 A: The process for resetting a Faba Box to factory settings may vary. Generally, it involves a specific button sequence or connecting to the official app. Consult the user manual or contact Faba support for precise instructions.
