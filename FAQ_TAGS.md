@@ -5,7 +5,7 @@
 FABA figures use NTAG203 chips, so ideally you should use those.
 Since they are almost impossible to come by, you can also use NTAG213 chips, which are the same memory size and almost the same functionality.
 
-Unfortunately there are many knock-off chips that do not work.
+Unfortunately getting the chips from NXP is tricky and there are many knock-off chips that do not work.
 Most of these behave as if the previously read chip was put on the FABA box regardless of their content, so be careful to turn the box off and on again before testing, otherwise you may wrongly assume they work.
 
 ### Known working NTAG213 chips
@@ -16,9 +16,13 @@ Most of these behave as if the previously read chip was put on the FABA box rega
 
 ### Known non-working NTAG213 chips - do not buy!
 
-Generally, it seems that any NTAG213 clone produced by company [5YOA](http://www.5yoa.com) fails. That seems to cover at least 90% of all NTAG213 chips on Aliexpress/TEMU, so choose wisely.
+Generally, it seems that any NTAG213 clone with serial starting 0x1D or 0xFF fails. Most often they're advertised with company 5YOA or ILMH. So far it seems to cover every single chip from Aliexpress I've tried, so choose wisely!
 
-- [Aliexpress 5YOA confirmed non-working](https://www.aliexpress.com/item/32814647380.html)
+- [Aliexpress 0x1D confirmed non-working - round paper - company 5YOA](https://www.aliexpress.com/item/32814647380.html)
+- [Aliexpress 0x1D confirmed non-working - small wet inlay rectangle](https://www.aliexpress.com/item/1005006335474882.html)
+- [Aliexpress 0x1D confirmed non-working - 40x25mm big paper rectangle](https://www.aliexpress.com/item/1005008319546642.html)
+- [Aliexpress 0xFF confirmed non-working - round wet inlay - antenna path visually different from the one above, but also failing](https://www.aliexpress.com/item/1005008604718409.html)
+- [Aliexpress 0xFF confirmed non-working - small wet inlay rectangle - again different from above, but failing in the same way](https://www.aliexpress.com/item/1005008604718409.html)
 
 ## NTAG215
 
