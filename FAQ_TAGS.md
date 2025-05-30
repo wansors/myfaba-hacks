@@ -49,4 +49,4 @@ Known working app for the second approach is [MiFARE Ultralight Tool](https://pl
 - [Aliexpress 0x04 - stickers](https://a.aliexpress.com/_EuRbf98) - be careful, their working range is only about 1mm from the top of the reading pad. The hard plastic version is preferable, it has range of about 5mm.
 
 ### Known non-working NTAG215 chips - do not buy!
-- [Aliexpress 0x04 - stickers](https://a.aliexpress.com/_Eweq3lo) - unsure about the root cause (as they appear to be the same as the working ones above), maybe they don't work "just" because of the limted range.
+- [Aliexpress 0x04 - stickers](https://a.aliexpress.com/_Eweq3lo) - unsure about the root cause (as the chip appears to be the same as the working ones above), maybe they don't work "just" because of the limited range of sticker versions with FABA.
