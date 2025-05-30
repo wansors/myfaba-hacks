@@ -5,7 +5,7 @@
 FABA figures use NTAG203 chips, so ideally you should use those.
 Since they are almost impossible to come by, you can also use NTAG213 chips, which are the same memory size and almost the same functionality.
 
-Unfortunately getting the chips from NXP is tricky and there are many knock-off chips that do not work.
+Unfortunately getting the OEM chips from NXP is tricky and there are many knock-off chips that do not work.
 Most of these behave as if the previously read chip was put on the FABA box regardless of their content, so be careful to turn the box off and on again before testing, otherwise you may wrongly assume they work.
 
 ### Known working NTAG213 chips
@@ -18,11 +18,13 @@ Most of these behave as if the previously read chip was put on the FABA box rega
 
 Generally, it seems that any NTAG213 clone with serial starting 0x1D or 0xFF fails. Most often they're advertised with company 5YOA or ILMH. So far it seems to cover every single chip from Aliexpress I've tried, so choose wisely!
 
-- [Aliexpress 0x1D confirmed non-working - round paper - company 5YOA](https://www.aliexpress.com/item/32814647380.html)
-- [Aliexpress 0x1D confirmed non-working - small wet inlay rectangle](https://www.aliexpress.com/item/1005006335474882.html)
-- [Aliexpress 0x1D confirmed non-working - 40x25mm big paper rectangle](https://www.aliexpress.com/item/1005008319546642.html)
-- [Aliexpress 0xFF confirmed non-working - round wet inlay - ILMH - antenna path visually different from the one above, but also failing](https://www.aliexpress.com/item/1005008604718409.html)
-- [Aliexpress 0xFF confirmed non-working - small wet inlay rectangle - ILMH - again different from above, but failing in the same way](https://www.aliexpress.com/item/1005008604718409.html)
+- [Aliexpress 0x1D - round paper - company 5YOA](https://www.aliexpress.com/item/32814647380.html)
+- [Aliexpress ox1D - round wet inlay - company 5YOA](https://a.aliexpress.com/_Ex2hhMA)
+- [Aliexpress 0x1D - small wet inlay rectangle](https://www.aliexpress.com/item/1005006335474882.html)
+- [Aliexpress 0x1D - 40x25mm big paper rectangle](https://www.aliexpress.com/item/1005008319546642.html)
+- [Aliexpress 0xFF - round wet inlay - ILMH - antenna path visually different from the one above, but also failing](https://www.aliexpress.com/item/1005008604718409.html)
+- [Aliexpress 0xFF - small wet inlay rectangle - ILMH - again different from above, but failing in the same way](https://www.aliexpress.com/item/1005008604718409.html)
+- [Temu 0xFF - round paper](https://share.temu.com/BRVL4FQjmDA)
 
 ## NTAG215
 
@@ -43,6 +45,8 @@ Known working app for the second approach is [MiFARE Ultralight Tool](https://pl
 
 ### Known working NTAG215 chips
 
-- [Aliexpress hard plastic disks](https://a.aliexpress.com/_EIFPVGa)
-- [Aliexpress stickers](https://a.aliexpress.com/_EuRbf98) - be careful, their working range is only about 1mm from the top of the reading pad. The hard plastic version is preferable, it has range of about 5mm.
-- "Wet inlay" version of the above sticker (no known URL, sorry - they look very similar to [these](https://www.aliexpress.com/item/1005008096213978.html) though) - same issue with working range as above.
+- [Aliexpress 0x04 - hard plastic disks](https://a.aliexpress.com/_EIFPVGa)
+- [Aliexpress 0x04 - stickers](https://a.aliexpress.com/_EuRbf98) - be careful, their working range is only about 1mm from the top of the reading pad. The hard plastic version is preferable, it has range of about 5mm.
+
+### Known non-working NTAG215 chips - do not buy!
+- [Aliexpress 0x04 - stickers](https://a.aliexpress.com/_Eweq3lo) - unsure about the root cause (as they appear to be the same as the working ones above), maybe they don't work "just" because of the limted range.
