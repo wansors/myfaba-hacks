@@ -6,11 +6,11 @@ A collection of tools and scripts for customizing and enhancing your MyFaba and 
 ## Create your own figure (Original Faba)
 Create a folder with your own songs in faba format
 ```
-./createFigure.sh <figure_ID (3 digits)> <source_folder>
+./createFigure.sh <figure_ID (4 digits)> <source_folder>
 ```
-For example for figure with ID 742
+For example for figure with ID 0742
 ```
-./createFigure.sh 742 /home/user/mysongs
+./createFigure.sh 0742 /home/user/mysongs
 ```
 
 Then copy it to your faba box.
@@ -20,11 +20,11 @@ Write an NFC TAG with the figure ID and enjoy it!
 ## Create your own figure (Faba+)
 Create a folder with your own songs in faba format
 ```
-./createFigureFabaPlus.sh <figure_ID (3 digits)> <source_folder>
+./createFigureFabaPlus.sh <figure_ID (4 digits)> <source_folder>
 ```
-For example for figure with ID 742
+For example for figure with ID 0742
 ```
-./createFigureFabaPlus.sh 742 /home/user/mysongs
+./createFigureFabaPlus.sh 0742 /home/user/mysongs
 ```
 
 Then copy it to your faba box (See FAQ).
@@ -82,7 +82,7 @@ For example, to create a figure with ID `999` using your song files from a folde
 #### On Linux/macOS:
 
 ```bash
-docker run --rm -v /path/to/my-songs:/source-folder createfigure-image 999 /source-folder
+docker run --rm -v /path/to/my-songs:/source-folder createfigure-image 0999 /source-folder
 ```
 
 #### On Windows:
@@ -100,7 +100,7 @@ Make sure to replace `C:\path\to\my-songs` with the actual path to the folder co
 - `--rm`: Automatically removes the container once it finishes running.
 - `-v /path/to/my-songs:/source-folder`: Maps your local `my-songs` folder to the `/source-folder` directory inside the container. Ensure this path is correct based on your operating system.
 - `createfigure-image`: The name of the Docker image you created in Step 1.
-- `999 /source-folder`: These are the arguments passed to the `createFigure.sh` script, where `999` is the figure ID and `/source-folder` is the path to the source folder inside the container.
+- `0999 /source-folder`: These are the arguments passed to the `createFigure.sh` script, where `0999` is the figure ID and `/source-folder` is the path to the source folder inside the container.
 
 This will run the script inside the Docker container and output the files into the `/source-folder` directory, which is mapped to your local `my-songs` folder.
 

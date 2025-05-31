@@ -8,7 +8,7 @@ set -e
 
 # Function to display usage information
 usage() {
-    echo "Usage: $0 <figure_ID (3 digits)> <source_folder>"
+    echo "Usage: $0 <figure_ID (4 digits)> <source_folder>"
     exit 1
 }
 
@@ -22,8 +22,8 @@ FIGURE_ID="$1"
 SOURCE_FOLDER="$2"
 
 # Validate that FIGURE_ID is exactly 3 digits
-if ! [[ "$FIGURE_ID" =~ ^[0-9]{3}$ ]]; then
-    echo "Error: Figure ID must be exactly 3 digits."
+if ! [[ "$FIGURE_ID" =~ ^[0-9]{4}$ ]]; then
+    echo "Error: Figure ID must be exactly 4 digits."
     usage
 fi
 
@@ -34,7 +34,7 @@ if [ ! -d "$SOURCE_FOLDER" ]; then
 fi
 
 # Define the output directory within the source folder
-OUTPUT_DIR="${SOURCE_FOLDER}/K0${FIGURE_ID}"
+OUTPUT_DIR="${SOURCE_FOLDER}/K${FIGURE_ID}"
 mkdir -p "$OUTPUT_DIR"
 
 # Initialize iterator
@@ -52,7 +52,7 @@ for file in "$SOURCE_FOLDER"/*.mp3; do
     ITERATOR=$(printf "%02d" "$iterator")
 
     # Define the new title
-    NEW_TITLE="K0${FIGURE_ID}CP${ITERATOR}"
+    NEW_TITLE="K${FIGURE_ID}CP${ITERATOR}"
 
     # Change the mp3 title using id3v2
     # Ensure id3v2 is installed

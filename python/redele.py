@@ -150,7 +150,7 @@ def main():
         "-f", 
         "--figure-id",
         metavar="Figure ID",
-        help="Three digit ID of the figure to be created (for encryption)."
+        help="Four digit ID of the figure to be created (for encryption)."
     )
 
     args = parser.parse_args()
@@ -170,11 +170,11 @@ def main():
         # every ID3 tag after all...
         mutagen.id3._tags.ID3Header.__init__ = utils.id3header_constructor_monkeypatch
         
-        if not re.match(r"^\d{3}$", args.figure_id):
-            print("Error: Figure ID must be exactly 3 digits.")
+        if not re.match(r"^\d{4}$", args.figure_id):
+            print("Error: Figure ID must be exactly 4 digits.")
             sys.exit(1)
 
-        output_dir = os.path.join(args.target_folder, f"K0{args.figure_id}")
+        output_dir = os.path.join(args.target_folder, f"K{args.figure_id}")
         os.makedirs(output_dir, exist_ok=True)
 
         mp3_files = [f for f in os.listdir(args.source_folder) if f.lower().endswith(".mp3")]
@@ -188,7 +188,7 @@ def main():
             print(f"Processing {file}...")
             
             iterator_str = f"{iterator:02d}"
-            new_title = f"K0{args.figure_id}CP{iterator_str}"
+            new_title = f"K{args.figure_id}CP{iterator_str}"
             source_file = os.path.join(args.source_folder, file)
             target_file = os.path.join(output_dir, f"CP{iterator_str}")
 
