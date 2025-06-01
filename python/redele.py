@@ -9,6 +9,7 @@ import re
 import shutil
 import utils
 
+from pathlib import Path
 from gooey import GooeyParser
 from mutagen.id3 import ID3, TIT2
 from mutagen.mp3 import MP3
@@ -177,7 +178,12 @@ def main():
         output_dir = os.path.join(args.target_folder, f"K{args.figure_id}")
         os.makedirs(output_dir, exist_ok=True)
 
-        mp3_files = [f for f in os.listdir(args.source_folder) if f.lower().endswith(".mp3")]
+        mp3_files = []
+        for root, _, filenames in os.walk(args.source_folder):
+            for filename in filenames:
+                full_path = Path(root) / filename
+                if filename.lower().endswith(".mp3"):
+                    mp3_files.append(str(full_path))
         if not mp3_files:
             print("No MP3 files found in the source folder.")
             sys.exit(1)
@@ -203,25 +209,34 @@ def main():
         print(f"Processing complete. Copy the files from '{output_dir}' directory to your Faba box.")
     
     if args.decrypt:
-        os.makedirs(args.target_folder, exist_ok=True)
+        
+        count = 0
+        mki_files = {}
+        for root, _, filenames in os.walk(args.source_folder):
+            for filename in filenames:
+                rel_path = Path(root).relative_to(args.source_folder)
+                if filename.lower().endswith(".mki"):
+                    mki_files.setdefault(str(rel_path), []).append(filename)
+                    count += 1
 
-        mki_files = [f for f in os.listdir(args.source_folder) if f.lower().endswith(".mki")]
         if not mki_files:
             print("No MKI files found in the source folder.")
             sys.exit(1)
 
         iterator = 1
-        for file in mki_files:
-            print(f"=========================[{iterator}/{len(mki_files)}]")
-            print(f"Processing {file}...")
-            source_file = os.path.join(args.source_folder, file)
-            target_file = os.path.join(args.target_folder, file)
-            mki_re = re.compile(re.escape('.mki'), re.IGNORECASE)
-            target_file = mki_re.sub('.mp3', target_file)
+        for subdir in mki_files:
+            os.makedirs(Path(args.target_folder) / subdir, exist_ok=True)
+            for file in mki_files[subdir]:
+                print(f"=========================[{iterator}/{count}]")
+                print(f"Processing {Path(subdir) / file}...")
+                source_file = str(Path(args.source_folder) / subdir / file)
+                target_file = str(Path(args.target_folder) / subdir / file)
+                mki_re = re.compile(re.escape('.mki'), re.IGNORECASE)
+                target_file = mki_re.sub('.mp3', target_file)
 
-            decrypted_file = decipher_file(source_file, target_file)
+                decrypted_file = decipher_file(source_file, target_file)
 
-            iterator += 1
+                iterator += 1
 
         print(f"Processing complete.")
 
