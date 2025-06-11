@@ -22,7 +22,7 @@ Alternatively, you can run the script in command-line.
 
 For example, to encrypt songs in `/home/user/songs` with figure ID `0742` and copy it to FABA box at `/mnt/faba/MKI01`, run:
 ```
-./redele.py --encrypt --source-folder /home/user/songs --figure-id 0742 --target-folder /mnt/faba/MKI01
+./redele.py --source-folder /home/user/songs --figure-id 0742 --target-folder /mnt/faba/MKI01
 ```
 Or, to play your Italian red elephant Ele's audio on the computer, you can decrypt it:
 ```
