@@ -3,8 +3,18 @@ A python script for customizing and enhancing your MyFaba storytelling box. Unlo
 
 Faba boxes are essentially MP3 players, but for original Faba boxes they need to have files pre-obfuscated. This script can turn directory of MP3s into directory supported by your FABA box, and can also turn directory of obfuscated MKI files back into MP3s.
 
+## Installation
+
+### On Windows:
+
+You can use your python interpreter if you have it (see linux/macos section), but you can also download pre-built binaries on Releases page.
+
+### On Linux / MacOS
+
+Install python3 on your system if you don't have it yet. Make sure to install `pip` as part of your python. Run `pip install -r requirements.txt` in the script directory to install prerequisites. Run `chmod +x redele.py` to invoke the script directly, or run it using `python3 redele.py`.
 
 ## Create your own figure (Original Faba red cube)
+
 Run the script with no parameters and you can use elementary GUI to do the decryption or encryption.
 ![GUI Screenshot](img/GUI.png?raw=true "GUI")
 
@@ -20,10 +30,6 @@ Or, to play your Italian red elephant Ele's audio on the computer, you can decry
 ``` 
 
 Write an NFC TAG with the figure ID and enjoy it!
-
-#### On Windows:
-
-You can use your python interpreter if you have it, but you can also download pre-built binaries on Releases page.
 
 
 ## Known Figure IDs
