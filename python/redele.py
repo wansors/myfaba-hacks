@@ -111,22 +111,27 @@ def main():
         description="Encrypt/Decrypt myfaba box MP3s",
     )
     
-    encdecgroup = parser.add_mutually_exclusive_group(
-        gooey_options={'initial_selection': 0}
+    program_mode_group = parser.add_argument_group("FABA encrypt/decrypt utility")
+    
+    program_mode_radiogroup = program_mode_group.add_mutually_exclusive_group(
+        required=True,
+        gooey_options=dict(title="Choose program mode",full_width=True, initial_selection=0)
     )
-    encdecgroup.add_argument(
-        "-e", 
-        "--encrypt", 
-        metavar="Encrypt", 
+    program_mode_radiogroup.add_argument(
+        "-f",
+        "--figure-id",
+        metavar="Encrypt",
+        help="Figure ID (4 digit number 0001-9999)",
+        widget="TextField",
+        default="0000"
+    )
+    program_mode_radiogroup.add_argument(
+        "-d",
+        "--decrypt",
+        metavar="Decrypt",
         action="store_true"
     )
-    encdecgroup.add_argument(
-        "-d", 
-        "--decrypt", 
-        metavar="Decrypt", 
-        action="store_true"
-    )
-
+    
     main_group = parser.add_argument_group(
         "Directory to process",
         gooey_options={'columns':2}
@@ -147,12 +152,6 @@ def main():
         widget='DirChooser',
         gooey_options={'full_width':True}
     )
-    main_group.add_argument(
-        "-f", 
-        "--figure-id",
-        metavar="Figure ID",
-        help="Four digit ID of the figure to be created (for encryption)."
-    )
 
     args = parser.parse_args()
     
@@ -165,7 +164,7 @@ def main():
         print(f"Error: Source folder '{args.source_folder}' does not exist or is not a directory.")
         sys.exit(1)
 
-    if args.encrypt:
+    if not args.decrypt:
         
         # monkeypatch out exceptions on invalid ID3 headers - we're only trying to delete
         # every ID3 tag after all...
