@@ -7,7 +7,7 @@ Faba boxes are essentially MP3 players, but for original Faba boxes they need to
 
 ### On Windows:
 
-You can use your python interpreter if you have it (see linux/macos section), but you can also download pre-built binaries on Releases page.
+You can use your python interpreter if you have it (see linux/macos section), but you can also download pre-built binaries on [Releases page](../releases).
 
 ### On Linux / MacOS
 
