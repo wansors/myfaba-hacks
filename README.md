@@ -4,6 +4,8 @@ A collection of tools and scripts for customizing and enhancing your MyFaba and 
 
 
 ## Create your own figure (Original Faba)
+For original FABA, you can also use [alternative implementation in python](python/README.md).
+
 Create a folder with your own songs in faba format
 ```
 ./createFigure.sh <figure_ID (4 digits)> <source_folder>
