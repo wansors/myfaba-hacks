@@ -11,7 +11,10 @@ You can use your python interpreter if you have it (see linux/macos section), bu
 
 ### On Linux / MacOS
 
-Install python3 on your system if you don't have it yet. Make sure to install `pip` as part of your python. Run `pip install -r requirements.txt` in the script directory to install prerequisites. Run `chmod +x redele.py` to invoke the script directly, or run it using `python3 redele.py`.
+- Install python3 on your system if you don't have it yet. Make sure to install `pip` as part of your python (usually done by default, but do not deselect it).
+- Run `pip install -r requirements.txt` in the script directory to install prerequisites.
+- Run `chmod +x redele.py` to enable running the script directly by e.g. double-clicking.
+- You can now run the script directly, even double-clicking in GUI should work. Alternatively (or if you skipped previous point), you can run it using `python3 redele.py` in the script directory.
 
 ## Create your own figure (Original Faba red cube)
 
@@ -22,11 +25,11 @@ Alternatively, you can run the script in command-line.
 
 For example, to encrypt songs in `/home/user/songs` with figure ID `0742` and copy it to FABA box at `/mnt/faba/MKI01`, run:
 ```
-./redele.py --source-folder /home/user/songs --figure-id 0742 --target-folder /mnt/faba/MKI01
+./redele.py encrypt --figure-id 0742 --source-folder /home/user/songs --target-folder /mnt/faba/MKI01
 ```
 Or, to play your Italian red elephant Ele's audio on the computer, you can decrypt it:
 ```
-./redele.py --decrypt --source-folder /mnt/faba/MKI01/K0010 --target-folder /home/user/elephant_ele
+./redele.py decrypt --source-folder /mnt/faba/MKI01/K0010 --target-folder /home/user/elephant_ele
 ``` 
 
 Write an NFC TAG with the figure ID and enjoy it!

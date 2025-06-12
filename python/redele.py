@@ -111,47 +111,55 @@ def main():
         description="Encrypt/Decrypt myfaba box MP3s",
     )
     
-    program_mode_group = parser.add_argument_group("FABA encrypt/decrypt utility")
+    subs = parser.add_subparsers(help="commands", dest="command")
     
-    program_mode_radiogroup = program_mode_group.add_mutually_exclusive_group(
-        required=True,
-        gooey_options=dict(title="Choose program mode",full_width=True, initial_selection=0)
-    )
-    program_mode_radiogroup.add_argument(
+    encrypt_group = subs.add_parser(
+        "encrypt", prog="Encrypt",
+    ).add_argument_group("")
+    encrypt_group.add_argument(
         "-f",
         "--figure-id",
-        metavar="Encrypt",
-        help="Figure ID (4 digit number 0001-9999)",
-        widget="TextField",
+        metavar="Figure ID",
+        help="Faba NFC chip identifier (4 digit number 0001-9999)",
         default="0000"
     )
-    program_mode_radiogroup.add_argument(
-        "-d",
-        "--decrypt",
-        metavar="Decrypt",
-        action="store_true"
-    )
-    
-    main_group = parser.add_argument_group(
-        "Directory to process",
-        gooey_options={'columns':2}
-    )
-    main_group.add_argument(
+    encrypt_group.add_argument(
         "-s", 
         "--source-folder",
         metavar="Source Folder",
-        help="Source of files to process",
+        help="Folder with MP3 files to process.",
         widget='DirChooser',
         gooey_options={'full_width':True}
     )
-    main_group.add_argument(
+    encrypt_group.add_argument(
         "-t", 
         "--target-folder",
         metavar="Target Folder",
-        help="Target of conversion. For encryption, subfolder for the figure will be created.",
+        help="Folder where generated FABA .MKI files will be stored. Subfolder for the figure will be created.",
         widget='DirChooser',
         gooey_options={'full_width':True}
     )
+    
+    decrypt_group = subs.add_parser(
+        "decrypt", prog="Decrypt",
+    ).add_argument_group("")
+    decrypt_group.add_argument(
+        "-s", 
+        "--source-folder",
+        metavar="Source Folder",
+        help="Folder with MKI files to process. Supports recursion.",
+        widget='DirChooser',
+        gooey_options={'full_width':True}
+    )
+    decrypt_group.add_argument(
+        "-t", 
+        "--target-folder",
+        metavar="Target Folder",
+        help="Folder for decrypted MP3 files.",
+        widget='DirChooser',
+        gooey_options={'full_width':True}
+    )
+    
 
     args = parser.parse_args()
     
@@ -164,7 +172,7 @@ def main():
         print(f"Error: Source folder '{args.source_folder}' does not exist or is not a directory.")
         sys.exit(1)
 
-    if not args.decrypt:
+    if args.command=="encrypt":
         
         # monkeypatch out exceptions on invalid ID3 headers - we're only trying to delete
         # every ID3 tag after all...
@@ -207,7 +215,7 @@ def main():
 
         print(f"Processing complete. Copy the files from '{output_dir}' directory to your Faba box.")
     
-    if args.decrypt:
+    if args.command=="decrypt":
         
         count = 0
         mki_files = {}
@@ -244,10 +252,11 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         from gooey import Gooey
         main = Gooey(program_name='Red Ele',
-                     default_size=(1100, 820),
+                     default_size=(600, 600),
                      progress_regex=r"^=+\[(\d+)/(\d+)]$",
                      progress_expr="x[0] / x[1] * 100",
-                     encoding='UTF-8'
+                     encoding='UTF-8',
+                     navigation="TABBED",
                     )(main)
     # Gooey reruns the script with this parameter for the actual execution.
     # Since we don't use decorator to enable commandline use, remove this parameter
