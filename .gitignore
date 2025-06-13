@@ -3,3 +3,4 @@
 .idea
 *.class
 __pycache__/
+/python/venv
