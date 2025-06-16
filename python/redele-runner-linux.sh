@@ -11,9 +11,26 @@ error() {
     echo "[ERROR] $1" >&2
 }
 
+# Prevent running with sudo
+if [ "$EUID" -eq 0 ]; then
+  error "This script should NOT be run as root or with sudo."
+  echo "Please run it as a regular user."
+  exit 1
+fi
+
 # Check if running on Linux
 if [[ "$(uname)" != "Linux" ]]; then
   error "This script runs only on Linux."
+  exit 1
+fi
+
+# Check if curl is available
+if ! command -v curl >/dev/null 2>&1; then
+  error "'curl' is required but not installed."
+  echo
+  echo "You can install it with:"
+  echo "   sudo apt install curl"
+  echo
   exit 1
 fi
 
