@@ -2,7 +2,6 @@
 
 set -e
 
-
 log() {
     echo "[INFO] $1"
 }
@@ -11,6 +10,12 @@ error() {
     echo "[ERROR] $1" >&2
 }
 
+# Check if running on Linux
+if [[ "$(uname)" != "Linux" ]]; then
+  error "This script runs only on Linux."
+  exit 1
+fi
+
 # Prevent running with sudo
 if [ "$EUID" -eq 0 ]; then
   error "This script should NOT be run as root or with sudo."
@@ -18,19 +23,34 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 
-# Check if running on Linux
-if [[ "$(uname)" != "Linux" ]]; then
-  error "This script runs only on Linux."
-  exit 1
-fi
+is_debian() {
+    [[ -f /etc/debian_version ]]
+}
+
+suggest_install() {
+    local package="$1"
+    local reason="$2"
+
+    error "$reason"
+    echo
+    if is_debian; then
+        echo "You can install it with:"
+        echo "   sudo apt install $package"
+    else
+        echo "Please install '$package' using your system's package manager."
+    fi
+    echo
+}
 
 # Check if curl is available
 if ! command -v curl >/dev/null 2>&1; then
-  error "'curl' is required but not installed."
-  echo
-  echo "You can install it with:"
-  echo "   sudo apt install curl"
-  echo
+  suggest_install "curl" "'curl' is required but not installed."
+  exit 1
+fi
+
+# Check if libSDL2 is available (for wxPython GUI support)
+if ! ldconfig -p | grep -q "libSDL2-2.0.so.0"; then
+  suggest_install "libsdl2-2.0-0" "'libSDL2-2.0.so.0' is missing — required by wxPython"
   exit 1
 fi
 
@@ -49,11 +69,7 @@ fi
 check_venv_support() {
     log "Checking if '$PYTHON_CMD -m venv' works..."
     if ! "$PYTHON_CMD" -m venv test_env 2>/dev/null; then
-        error "'python -m venv' failed — required module not available."
-        echo
-        echo "Please install the following packages:"
-        echo "   sudo apt install python3-venv python3-pip"
-        echo
+        suggest_install "python3-venv python3-pip" "'python -m venv' failed — required module not available."
         exit 1
     else
         rm -rf test_env
