@@ -5,7 +5,7 @@ gooey_root = os.path.dirname(gooey.__file__)
 
 block_cipher = None
 
-a = Analysis(['RedEle.py'],
+a = Analysis(['redele.py'],
              pathex=[],
              binaries=[],
              datas=[],
