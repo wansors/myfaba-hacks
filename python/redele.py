@@ -69,6 +69,7 @@ def cipher_file(input_filename):
                 outfile.write(bytes([modified_byte]))
                 pos += 1
 
+        print(f"Encryption complete. Output file: {output_filename}")
         return output_filename
     except IOError as e:
         print(f"Error processing {input_filename}: {e}")
@@ -98,7 +99,7 @@ def decipher_file(input_filename, output_filename):
 
                 pos += 1
 
-        print(f"Deciphering complete. Output file: {output_filename}")
+        print(f"Decryption complete. Output file: {output_filename}")
         return output_filename
     except IOError as e:
         print(f"Error processing {input_filename}: {e}")
@@ -122,6 +123,13 @@ def main():
         metavar="Figure ID",
         help="Faba NFC chip identifier (4 digit number 0001-9999)",
         default="0000"
+    )
+    encrypt_group.add_argument(
+        "-x",
+        "--extract-figure",
+        metavar="Extract Figure ID",
+        action="store_true",
+        help="Get figure ID from directory name (MP3 files have to be located in folder named K0001-K9999)",
     )
     encrypt_group.add_argument(
         "-s", 
@@ -178,42 +186,56 @@ def main():
         # every ID3 tag after all...
         mutagen.id3._tags.ID3Header.__init__ = utils.id3header_constructor_monkeypatch
         
-        if not re.match(r"^\d{4}$", args.figure_id):
-            print("Error: Figure ID must be exactly 4 digits.")
-            sys.exit(1)
+        count = 0
+        mp3_files = {}
+        if args.extract_figure:
+            for root, _, filenames in os.walk(args.source_folder):
+                for filename in filenames:
+                    full_path = Path(root) / filename
+                    match = re.search(r'[\\/]K(\d{4})$', root)
+                    if filename.lower().endswith(".mp3") and match:
+                        mp3_files.setdefault(match.group(1), []).append(full_path)
+                        count += 1
+            
+        else:
+            if not re.match(r"^\d{4}$", args.figure_id):
+                print("Error: Figure ID must be exactly 4 digits.")
+                sys.exit(1)
 
-        output_dir = os.path.join(args.target_folder, f"K{args.figure_id}")
-        os.makedirs(output_dir, exist_ok=True)
+            for root, _, filenames in os.walk(args.source_folder):
+                for filename in filenames:
+                    full_path = Path(root) / filename
+                    if filename.lower().endswith(".mp3"):
+                        mp3_files.setdefault(args.figure_id, []).append(full_path)
+                        count += 1
 
-        mp3_files = []
-        for root, _, filenames in os.walk(args.source_folder):
-            for filename in filenames:
-                full_path = Path(root) / filename
-                if filename.lower().endswith(".mp3"):
-                    mp3_files.append(str(full_path))
-        if not mp3_files:
+        if count == 0:
             print("No MP3 files found in the source folder.")
             sys.exit(1)
 
         iterator = 1
-        for file in mp3_files:
-            print(f"=========================[{iterator}/{len(mp3_files)}]")
-            print(f"Processing {file}...")
-            
-            iterator_str = f"{iterator:02d}"
-            new_title = f"K{args.figure_id}CP{iterator_str}"
-            source_file = os.path.join(args.source_folder, file)
-            target_file = os.path.join(output_dir, f"CP{iterator_str}")
+        for figure in mp3_files:
+            os.makedirs(Path(args.target_folder) / f"K{figure}", exist_ok=True)
+            filenum = 1
+            for file in mp3_files[figure]:
+                print(f"=========================[{iterator}/{count}]")
+                print(f"Processing {file}...")
+                
+                filenum_str = f"{filenum:02d}"
+                new_title = f"K{figure}CP{filenum_str}"
+                source_file = file
+                target_file = str(Path(args.target_folder) / f"K{figure}" / f"CP{filenum_str}")
 
-            shutil.copy(source_file, target_file)
-            clear_and_set_title(target_file, new_title)
+                shutil.copy(source_file, target_file)
+                clear_and_set_title(target_file, new_title)
 
-            encrypted_file = cipher_file(target_file)
-            os.remove(target_file)
+                encrypted_file = cipher_file(target_file)
+                os.remove(target_file)
 
-            iterator += 1
+                iterator += 1
+                filenum += 1
 
-        print(f"Processing complete. Copy the files from '{output_dir}' directory to your Faba box.")
+        print(f"Processing complete. Copy the files from '{args.target_folder}' directory to your Faba box.")
     
     if args.command=="decrypt":
         
@@ -226,7 +248,7 @@ def main():
                     mki_files.setdefault(str(rel_path), []).append(filename)
                     count += 1
 
-        if not mki_files:
+        if count == 0:
             print("No MKI files found in the source folder.")
             sys.exit(1)
 
