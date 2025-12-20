@@ -47,7 +47,7 @@ A: Yes, you can add your own audio files to the Faba Box. However, you'll need t
 A: You'll need to use an NFC writing tool to copy the code of a character onto a blank NTAG213 tag. Specific instructions may vary depending on the tool you're using - in general, you need to write NDEF text record with value `02190530XXXX00`, where `XXXX` stands for figure ID (0001 to 9999). This text needs to end up between sector 7, byte 3 and sector 10 (0x0A) byte 4 on the tag. For example, app _NFC_Tools_ on both iOS and Android writes the chip correctly by just creating single new "text" field with correct value and writing it.
 
 ### Q: What should I do if the Faba Box doesn't recognize my custom tag?
-A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that [you're using a compatible NFC tag type](./FAQ_TAGS.md). If the light flashes rapidly, box has no content for the tag with this figure ID.
+A: If the box's light stays steady and doesn't make any noise when you place your custom tag, double-check that you've written the correct code to the tag and that [you're using a compatible NFC tag type](./FAQ_TAGS.md). If the light flashes rapidly, box has no content for the tag with this figure ID or the MP3 ID3 tags are not correclty updated.
 
 ### Q: How can I decrypt the files from the Faba Box?
 A: To decrypt the files:
