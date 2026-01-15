@@ -217,7 +217,7 @@ def main():
         for figure in mp3_files:
             os.makedirs(Path(args.target_folder) / f"K{figure}", exist_ok=True)
             filenum = 1
-            for file in mp3_files[figure]:
+            for file in sorted(mp3_files[figure]):
                 print(f"=========================[{iterator}/{count}]")
                 print(f"Processing {file}...")
                 
