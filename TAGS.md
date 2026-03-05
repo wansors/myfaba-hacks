@@ -144,6 +144,7 @@
 | 0207 | French          | Le Gruffalo                                                          |          |
 | 0208 | French          | Petit Gruffalo                                                       |          |
 | 0209 | French          | La sorcière dans les airs                                            |          |
+| 0210 | Italian         | Il Piccolo Principe                                                  | FFR10001 |
 | 0211 | French          | Les Chansons des Animaux                                             |          |
 | 0212 | French          | Les câlins avant de dormir                                           |          |
 | 0213 | French          | La petite Sirène                                                     |          |
