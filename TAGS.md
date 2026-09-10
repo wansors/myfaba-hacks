@@ -129,10 +129,53 @@
 | 0150 | Italian         | Le canzoni di Ele l'elefante                                         | FFR30015 |
 | 0151 | Italian         | Buon Natale!                                                         |          |
 | 0152 | Italian         | Lounge Christmas                                                     |          |
+| 0153 | Italian         | Unico come Leo                                                       |          |
 | 0154 | Italian         | Sing with Daisy Dot                                                  |          |
 | 0156 | Italian         | PAW Patrol la squadra dei cuccioli: Rocky                            | FFR15305 |
+| 0157 | Italian         | Le canzoni di CoComelon                                              |          |
+| 0158 | Italian         | Che avventure, Topo Gigio!                                           |          |
+| 0159 | Italian         | Let’s rock’n’roll!                                                   |          |
+| 0160 | Italian         | Frozen - Il regno di ghiaccio                                        |          |
+| 0161 | Italian         | Il re leone                                                          |          |
+| 0162 | Italian         | Wish                                                                 |          |
+| 0163 | Italian         | La carica dei 101                                                    |          |
+| 0164 | Italian         | Alla scoperta delle emozioni                                         |          |
+| 0165 | Italian         | Coccole e abbracci con Marta                                         |          |
+| 0166 | Italian         | Pop italiano per tutta la famiglia                                   |          |
+| 0167 | Italian         | Encanto Benvenuti a casita                                           |          |
+| 0168 | Italian         | Dumbo L'elefante volante                                             |          |
+| 0169 | Italian         | Otto, Spino e la tartaruga da salvare                                |          |
+| 0170 | Italian         | Storie di pirati e corsari                                           |          |
+| 0171 | Italian         | Pippi Calzelunghe                                                    |          |
+| 0172 | Italian         | I racconti di Elmer                                                  |          |
+| 0173 | Italian         | Waiting for Christmas                                                |          |
+| 0174 | Italian         | Musica classica al violoncello                                       |          |
+| 0175 | Italian         | Canta con Carolina                                                   |          |
+| 0176 | Italian         | Super Nonna e i Super Buffi                                          |          |
+| 0177 | Italian         | Sing along with Charlie                                              |          |
+| 0178 | Italian         | La Bella e la Bestia                                                 |          |
+| 0179 | Italian         | Luca                                                                 |          |
+| 0180 | Italian         | Il Piccolo Principe                                                  |          |
+| 0181 | Italian         | SpongeBob Avventure a Bikini Bottom                                  |          |
+| 0182 | Italian         | Il mondo di Dora                                                     |          |
+| 0183 | Italian         | Dormi, dormi stellina                                                |          |
+| 0184 | Italian         | Milo e il grande torneo di calcio                                    |          |
+| 0185 | Italian         | Tutto balla con Lea                                                  |          |
+| 0186 | Italian         | Canzoni per piccoli passi                                            |          |
+| 0187 | Italian         | Lilli e il Vagabondo                                                 |          |
+| 0188 | Italian         | Mulan                                                                |          |
+| 0189 | Italian         | Lilo e Stitch                                                        |          |
 | 0190 | Neutral         | FABA·ME white                                                        |          |
+| 0191 | Italian         | FABA•ME Banana                                                       |          |
+| 0191 | Spanish         | FABA•ME Plátano                                                      |          |
+| 0192 | Italian         | FABA•ME Pesca                                                        |          |
+| 0192 | Spanish         | FABA•ME Melocotón                                                    |          |
+| 0193 | Italian         | FABA•ME Menta                                                        |          |
+| 0194 | Italian         | FABA•ME Fragola                                                      |          |
+| 0195 | Italian         | FABA•ME Prato                                                        |          |
+| 0196 | Italian         | FABA•ME Lavanda                                                      |          |
 | 0198 | Neutral         | FABA·ME red                                                          | FFR50002 |
+| 0198 | Spanish         | FABA•ME Rojo                                                         |          |
 | 0199 | Neutral         | FABA·ME Blue                                                         |          |
 | 0200 | French          | Les trois petits cochons                                             |          |
 | 0201 | French          | Le Chat bottè et une autre histoire                                  |          |
@@ -144,7 +187,6 @@
 | 0207 | French          | Le Gruffalo                                                          |          |
 | 0208 | French          | Petit Gruffalo                                                       |          |
 | 0209 | French          | La sorcière dans les airs                                            |          |
-| 0210 | Italian         | Il Piccolo Principe                                                  | FFR10001 |
 | 0211 | French          | Les Chansons des Animaux                                             |          |
 | 0212 | French          | Les câlins avant de dormir                                           |          |
 | 0213 | French          | La petite Sirène                                                     |          |
@@ -202,7 +244,18 @@
 | 0270 | French          | Brossons-nous les dents                                              |          |
 | 0271 | French          | Célébrons Halloween                                                  |          |
 | 0272 | French          | Noël                                                                 |          |
+| 0273 | French          | Unique comme Léo                                                     |          |
 | 0274 | French          | Chantez en anglais avec Daisy Dot                                    |          |
+| 0275 | French          | Passion rock'n'roll                                                  |          |
+| 0276 | French          | À la découverte des émotions                                         |          |
+| 0277 | French          | Câlins complices avec Marta                                          |          |
+| 0278 | French          | Momo, Flip et le sauvetage de la tortue                              |          |
+| 0279 | French          | Grandir en chansons                                                  |          |
+| 0280 | French          | Milo et le grand tournoi de foot                                     |          |
+| 0281 | French          | Tout danse avec Léa                                                  |          |
+| 0282 | French          | Dors bien, ma petite étoile                                          |          |
+| 0284 | French          | Les chansons de Pocoyo                                               |          |
+| 0285 | French          | Zébulon et Zébulon et les médecins volants                           |          |
 | 0300 | French          | Le festival des chansons [fr]                                        |          |
 | 0400 | Spanish         | Ele el elefante                                                      |          |
 | 0401 | Spanish         | Dulces sinfonías de Mozart                                           | FFL30003 |
@@ -216,7 +269,7 @@
 | 0409 | Spanish         | Dando saltos por el mundo                                            |          |
 | 0410 | Spanish         | El Grúfalo                                                           |          |
 | 0411 | Spanish         | Las aventuras de Pinocho                                             |          |
-| 0412 | Spanish         | Canta y baila con Nino                                               |          |
+| 0412 | Spanish         | Canta y baila con Nino                                               |          |  
 | 0413 | Spanish         | Aladino y la lámpara maravillosa                                     |          |
 | 0414 | Spanish         | Baby yoga                                                            |          |
 | 0415 | Spanish         | Gallina Pintadita                                                    |          |
@@ -255,7 +308,69 @@
 | 0452 | Spanish         | Nos lavamos los dientes                                              |          |
 | 0453 | Spanish         | Celebramos Halloween                                                 |          |
 | 0454 | Spanish         | Navidad                                                              |          |
+| 0455 | Spanish         | Único como Leo                                                       |          |
 | 0456 | Spanish         | Canta en inglés con Daisy Dot                                        |          |
+| 0457 | Spanish         | Las canciones de CoComelon                                           |          |
+| 0459 | Spanish         | ¡A todo rock'n'roll!                                                 |          |
+| 0460 | Spanish         | Frozen El reino del hielo                                            |          |
+| 0461 | Spanish         | El rey leon                                                          |          |
+| 0462 | Spanish         | Wish El poder de los deseos                                          |          |
+| 0463 | Spanish         | 101 Dálmatas                                                         |          |
+| 0464 | Spanish         | Descubriendo las emociones                                           |          |
+| 0466 | Catalan         | Un any en cançons                                                    |          |
+| 0467 | Spanish         | Mimos y abrazos con Marta                                            |          |
+| 0468 | Spanish         | Encanto ¡Bienvenidos a casita!                                       |          |
+| 0469 | Spanish         | Dumbo                                                                |          |
+| 0470 | Spanish         | Otto, Espino y el salvamento de la tortuga                           |          |
+| 0471 | Spanish         | Historias de piratas y corsarios                                     |          |
+| 0472 | Catalan         | L’aranyeta cantadora                                                 |          |
+| 0473 | Spanish         | La Bella y la Bestia                                                 |          |
+| 0474 | Spanish         | Luca                                                                 |          |
+| 0475 | Spanish         | El Principito                                                        |          |
+| 0476 | Spanish         | La Patrulla Canina Chase                                             |          |
+| 0478 | Spanish         | La Patrulla Canina Skye                                              |          |
+| 0482 | Spanish         | El mundo de Dora                                                     |          |
+| 0483 | Spanish         | Milo y el gran torneo de fútbol                                      |          |
+| 0484 | Spanish         | Todo baila con Lea                                                   |          |
+| 0486 | Spanish         | La Dama y el Vagabundo                                               |          |
+| 0487 | Spanish         | Mulan                                                                |          |
+| 0488 | Spanish         | Lilo y Stitch                                                        |          |
+| 0489 | Spanish         | Vaiana                                                               |          |
+| 0490 | Spanish         | Duerme, duerme estrellita                                            |          |
+| 0491 | Spanish         | Las canciones de Pocoyó                                              |          |
+| 0493 | Spanish         | Rexi y los misterios de la naturaleza                                |          |
+| 0494 | Catalan         | Els tres porquets i un altre conte                                   |          |
+| 0495 | Spanish         | Cars                                                                 |          |
+| 0496 | Spanish         | Toy Story                                                            |          |
+| 0497 | Spanish         | Historias de valerosos caballeros                                    |          |
 | 0600 | Latam           | El gato con botas y otro cuento                                      |          |
 | 0601 | Latam           | La cenicienta y otro cuento                                          |          |
 | 0602 | Latam           | Los tres cerditos y otro cuento                                      |          |
+| 0701 | Italian         | 44 Gatti Buffycats in concerto                                       |          |
+| 0702 | Italian         | Kokò e l'abbraccio della buonanotte                                  |          |
+| 0704 | Italian         | Le canzoni di Pocoyo                                                 |          |
+| 0705 | Italian         | Zog e Zog e i medici volanti                                         |          |
+| 0706 | Italian         | Le sigle dei cartoni con Uan                                         |          |
+| 0707 | Italian         | Paura e coraggio con Artù                                            |          |
+| 0708 | Italian         | Rexi e i misteri della natura                                        |          |
+| 0709 | Italian         | Oceania                                                              |          |
+| 0710 | Italian         | Cars                                                                 |          |
+| 0711 | Italian         | Toy Story                                                            |          |
+| 0718 | Italian         | Tommy topo canterino                                                 |          |
+| 0719 | Italian         | Canta con Zoey!                                                      |          |
+| 1016 | Dutch           | Faba•Me Rood                                                         |          |
+| 1017 | Dutch           | Klassieke pianomuziek                                                |          |
+| 1018 | Dutch           | Rustige symfonieën van Mozart                                        |          |
+| 1019 | Dutch           | Zachte slaapliedjes                                                  |          |
+| 1020 | Dutch           | Zing mee met Pepper                                                  |          |
+| 1021 | Dutch           | Dierenliedjes                                                        |          |
+| 1022 | Dutch           | Zing mee in het Engels met Daisy Dot                                 |          |
+| 1023 | Dutch           | Engelse kerstliedjes                                                 |          |
+| 1024 | Dutch           | Doe mee met de rock’n’roll!                                          |          |
+| 1025 | Dutch           | Charlie's Engelse Liedjes                                            |          |
+| 1027 | Dutch           | PAW Patrol: Chase                                                    |          |
+| 1028 | Dutch           | PAW Patrol Skye                                                      |          |
+| 1029 | Dutch           | De drie kleine biggetjes en nog een verhaal                          |          |
+| 1030 | Dutch           | Roodkapje en nog een verhaal                                         |          |
+| 1031 | Dutch           | Zing met Zoey!                                                       |          |
+| 9999 | Italian         | Bedtime routine                                                      |          |
