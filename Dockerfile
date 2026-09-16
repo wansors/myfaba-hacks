@@ -1,5 +1,6 @@
-# Use the lightweight debian:bullseye-slim image
-FROM debian:bullseye-slim
+# Use the lightweight debian:bookworm-slim image
+# (bullseye is end-of-life, its apt repositories now return 404)
+FROM debian:bookworm-slim
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \

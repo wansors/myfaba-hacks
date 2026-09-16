@@ -121,7 +121,7 @@ docker run --rm -v /path/to/my-songs:/source-folder createfigure-image 0999 /sou
 
 Open **Command Prompt** or **PowerShell** and run this command:
 ```bash
-docker run --rm -v C:\path\to\my-songs:/source-folder createfigure-image 999 /source-folder
+docker run --rm -v C:\path\to\my-songs:/source-folder createfigure-image 0999 /source-folder
 ```
 
 Make sure to replace `C:\path\to\my-songs` with the actual path to the folder containing your songs in `.mp3` format. This folder will be mounted to the `/source-folder` directory inside the Docker container. You can use this exact name.
